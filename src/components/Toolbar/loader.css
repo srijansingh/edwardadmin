@@ -1,0 +1,84 @@
+.product {
+    display:flex;
+    flex-direction:row;
+
+}
+
+.product-image{
+    width:180px;
+    height:200px;
+    background:#e6e6e6;
+    animation-name: category;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    
+}
+
+
+.product-box{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    
+    padding:0.5rem 1rem;
+}
+.product-details{
+   
+    display:flex;
+    flex-direction:column;
+   
+   
+}
+
+.product-details .title{
+    padding:1rem;
+    width:300px;
+    background:#a6a6a6;
+    margin-bottom:2px;
+    animation-name: category;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+
+.product-details .price{
+    padding:0.8rem;
+    width:150px;
+    background:#f2f2f2;
+    animation-name: category;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    margin:2px 0;
+}
+
+.action-box{
+    display:flex;
+    flex-direction:row;
+}
+.action-box .buttons{
+    width:200px;
+    padding:1rem;
+    background:#a6a6a6;
+    animation-name: category;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    margin:2px
+}
+
+@keyframes category {
+    /* 0%{
+        background: linear-gradient(45deg, white, #a6a6a6 , #e6e6e6);
+
+    } */
+    30%{
+        background: #e6e6e6;
+    }
+   
+    70%{
+        background: linear-gradient(45deg, white, #e6e6e6);
+    }
+    100%{
+        background: white;
+    }
+}

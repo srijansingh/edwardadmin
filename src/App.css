@@ -1,0 +1,17 @@
+.app-container{
+  position:absolute;
+  width:100%;
+  /* top:72px; */
+  display:flex;
+  flex-direction:row;
+
+}
+
+.route-component{
+  position:fixed;
+  left:250px;
+  
+  max-width:1100px;
+  width:100%;
+  min-height:80vh;
+}
