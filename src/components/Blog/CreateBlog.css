@@ -1,0 +1,29 @@
+.blog-table-container{
+    max-width:900px;
+    min-height: 500px;
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    
+    padding:10px;
+}
+
+table{
+    width:100%;
+   
+}
+
+input, button{
+   width:100%;
+   width:100%;
+   padding:8px 0;
+   outline:none;
+   border:1px solid #e6e6e6;
+   margin:12px 0;
+   border-radius: 3PX;
+}
+button{
+    background:blue;
+    color:white
+}

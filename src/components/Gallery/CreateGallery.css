@@ -17,12 +17,12 @@
 
 }
 
-table{
+.table-container table{
     width:100%;
    
 }
 
-input, button{
+.table-container input, button{
    width:100%;
    width:100%;
    padding:8px 0;
