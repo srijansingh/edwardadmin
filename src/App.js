@@ -11,6 +11,7 @@ import ViewGallery from './components/Gallery/ViewGallery';
 import CreateBlog from './components/Blog/CreateBlog';
 import ViewBlog from './components/Blog/ViewBlog';
 import "./App.css"; 
+import Singleblog from './components/Blog/singleblog';
 
 
 class App extends Component {
@@ -182,6 +183,7 @@ class App extends Component {
             )}
           />
 
+        <Route exact path="/blog/:_id" component={Singleblog}/>  
            <Route
             path="/customers"
             exact
