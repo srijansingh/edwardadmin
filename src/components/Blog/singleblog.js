@@ -86,15 +86,7 @@ class SingleBlog extends Component{
         return (
           <div style={{display:'flex',justifyContent:'space-around',alignItems:'center'}}>
             <Card className={classes.root}>
-              {/* <CardHeader
-                title={this.state.title}
-                
-              />
-              <CardMedia
-                      className={classes.cardMedia}
-                      image={this.state.image}
-                      title={this.state.title}
-                    /> */}
+
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
                         {this.state.title}

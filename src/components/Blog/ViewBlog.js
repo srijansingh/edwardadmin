@@ -35,7 +35,8 @@ class ViewBlog extends Component {
         super();
         this.state = {
             blog:[],
-            blogpost:true
+            blogpost:true,
+            isLoading:false
         }
     }
 
@@ -60,10 +61,38 @@ class ViewBlog extends Component {
         }).then(response => {
             console.log(response.data)
             this.setState({
-                blog:response.data
+                blog:response.data,
+                isLoading:false
             }) 
         })
+        .catch(err => {
+          this.setState({
+            isLoading:false
+          })
+        })
     }
+
+    handleDelete = (id) => {
+      fetch('https://edserver.herokuapp.com/api/blog/'+id, {
+            method: "DELETE",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                Authorization: 'Bearer '+this.props.token
+            }
+        })
+      .then(response => {
+        this.setState({
+          blogpost:false
+        })
+        alert("Post Deleted Successfully")
+      })
+      .catch(err => {
+       
+        alert("Something went wrong")
+      })
+    }
+
 
     render() {
         const {classes} = this.props;
@@ -95,7 +124,7 @@ class ViewBlog extends Component {
                         View
                       </Button>
                      
-                      <Button  size="small" color="secondary" variant="contained" onClick={() =>{if(window.confirm('Delete the item?')) {this.handleDelete(this.props.id)};}}>
+                      <Button  size="small" color="secondary" variant="contained" onClick={() =>{if(window.confirm('Delete the item?')) {this.handleDelete(list._id)};}}>
                         Delete
                       </Button>
                     </CardActions>
@@ -121,8 +150,10 @@ class ViewBlog extends Component {
                     <div>
                     <Container className={classes.cardGrid} maxWidth="md">
                     <Grid container spacing={4}>
-               
-                        {blog}
+                        {
+                          this.state.isLoading ? 'Loading please wait...' : blog
+                        }
+                        
                    
                     </Grid>
                 </Container>

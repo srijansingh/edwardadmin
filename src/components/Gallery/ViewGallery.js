@@ -46,16 +46,45 @@ class ViewGallery extends Component {
         }).then(response => {
             console.log(response.data)
             this.setState({
-                category:response.data
+                category:response.data,
+                isLoading:false
             }) 
+        })
+        .catch(err => {
+            this.setState({
+              isLoading:false
+            })
         })
                 
     }
 
+    handleDelete = (id) => {
+        fetch('https://edserver.herokuapp.com/api/gallery/'+id, {
+              method: "DELETE",
+              headers: {
+                  "Accept": "application/json",
+                  "Content-Type": "application/json",
+                  Authorization: 'Bearer '+this.props.token
+              }
+          })
+        .then(response => {
+          this.setState({
+            blogpost:false
+          })
+          alert("Deleted Successfully");
+          window.location.reload(false);
+        })
+        .catch(err => {
+         
+          alert("Something went wrong")
+        })
+      }
+  
+
     render() {
         const category = this.state.category.map((list, index) => {
             return (
-                <div key={index} className="gallery-card">
+                <div key={index} onDoubleClick={() =>{if(window.confirm('Delete the item?')) {this.handleDelete(list._id)};}} className="gallery-card">
                     <div className="gallery-image">
                         <img src={list.imagelink} alt={list.title+" edgav"}/>
                     </div>
@@ -75,7 +104,9 @@ class ViewGallery extends Component {
 
                     <div style={{padding:'1rem'}}>
                        <div className="gallery-container">
-                            {category}
+                       {
+                          this.state.isLoading ? 'Loading please wait...' : category
+                        }
                        </div>
                     </div>
                 </div>
