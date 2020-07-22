@@ -30,7 +30,7 @@ class ViewGallery extends Component {
             isLoading:true
         });
 
-        fetch('https://edserver.herokuapp.com/api/gallery', {
+        fetch('https://api.edgiav.com/api/gallery', {
             method: "GET",
             headers: {
                 "Accept": "application/json",
@@ -59,7 +59,7 @@ class ViewGallery extends Component {
     }
 
     handleDelete = (id) => {
-        fetch('https://edserver.herokuapp.com/api/gallery/'+id, {
+        fetch('https://api.edgiav.com/api/gallery/'+id, {
               method: "DELETE",
               headers: {
                   "Accept": "application/json",

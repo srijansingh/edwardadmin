@@ -36,7 +36,7 @@ class CreateBlog extends Component {
 
     handleContent =() =>{
         this.setState({isLoading : true})
-        fetch('https://edserver.herokuapp.com/api/blog', {
+        fetch('https://api.edgiav.com/api/blog', {
                 method: "POST",
                 headers: {
                     "Accept": "application/json",

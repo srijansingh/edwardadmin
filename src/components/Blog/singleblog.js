@@ -51,7 +51,7 @@ class SingleBlog extends Component{
     }
 
     componentDidMount(){
-        fetch('https://edserver.herokuapp.com/api/blog/'+this.props.match.params._id, {
+        fetch('https://api.edgiav.com/api/blog/'+this.props.match.params._id, {
             method: "GET",
             headers: {
                 "Accept": "application/json",

@@ -52,7 +52,7 @@ class CreateGallery extends Component {
                 this.setState({
                     imagelink : url
                 })
-                fetch('https://edserver.herokuapp.com/api/gallery', {
+                fetch('https://api.edgiav.com/api/gallery', {
                     method: "POST",
                     headers: {
                         "Accept": "application/json",

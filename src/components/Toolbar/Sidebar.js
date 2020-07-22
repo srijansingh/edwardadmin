@@ -101,12 +101,8 @@ const styles = (theme) => ({
                     <Collapse in={this.state.open} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
 
-                        <NestedListItemLink key="6" className={classes.nested} href="/myprofile">
-                            <ListItemIcon>
-                            <AccountCircleIcon style={{color:"black"}}/>
-                            </ListItemIcon>
-                            <ListItemText primary="Profile" />
-                        </NestedListItemLink>
+                       
+                       
                         
                         <NestedListItemLink key="7" className={classes.nested} onClick={this.props.logout}>
                             <ListItemIcon>

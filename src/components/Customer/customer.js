@@ -32,7 +32,7 @@ class  Customer extends Component {
         })
 
 
-        fetch('https://edserver.herokuapp.com/api/customer', {
+        fetch('https://api.edgiav.com/api/customer', {
             method: "GET",
             headers: {
                 "Accept": "application/json",

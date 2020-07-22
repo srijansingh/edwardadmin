@@ -57,7 +57,7 @@ class App extends Component {
   loginHandler = (event, authData) => {
     event.preventDefault();
     this.setState({ authLoading: true });
-    fetch('https://edserver.herokuapp.com/auth/login', {
+    fetch('https://api.edgiav.com/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
