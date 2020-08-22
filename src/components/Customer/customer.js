@@ -49,7 +49,7 @@ class  Customer extends Component {
         .then(response => {
                 console.log(response)
                 this.setState({
-                    customer : response.post,
+                    customer : response.data,
                     isLoading:false
                 })
         })
@@ -71,7 +71,7 @@ class  Customer extends Component {
         // const {classes} = this.props;
         
         const customers = this.state.customer.map((list, index) => {
-            return <CustomerComponent key={index} index={index} name={list.name} email={list.email} />
+            return <CustomerComponent key={index} index={index} name={list.name} message={list.message} phonenum={list.phonenum} email={list.email} />
         })
 
         return (
@@ -101,6 +101,8 @@ class  Customer extends Component {
                        <th style={{padding:'10px'}}>S No.</th>
                            <th style={{padding:'10px'}}>Name</th>
                            <th style={{padding:'10px'}}>Email</th>
+                           <th style={{padding:'10px'}}>Phone</th>
+                           <th style={{padding:'10px'}}>Message</th>
                        </tr>
                        {customers}
                    </table>

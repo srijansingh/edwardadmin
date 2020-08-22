@@ -15,6 +15,8 @@ export default class CustomerComponent extends Component {
                <th style={{padding:'10px'}}>{this.props.index+1}</th>
                <td style={{padding:'10px'}}>{this.props.name}</td>
                <td style={{padding:'10px'}}>{this.props.email}</td>
+               <td style={{padding:'10px'}}>{this.props.phonenum}</td>
+               <td style={{padding:'10px'}}>{this.props.message}</td>
            </tr>
         )
     }
