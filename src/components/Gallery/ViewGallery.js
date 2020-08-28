@@ -26,11 +26,12 @@ class ViewGallery extends Component {
     }
 
     componentDidMount(){
+        console.log(this.props.token)
         this.setState({
             isLoading:true
         });
 
-        fetch('https://api.edgiav.com/api/gallery', {
+        fetch('https://apis.edgiav.com/api/gallery', {
             method: "GET",
             headers: {
                 "Accept": "application/json",
@@ -59,13 +60,13 @@ class ViewGallery extends Component {
     }
 
     handleDelete = (id) => {
-        fetch('https://api.edgiav.com/api/gallery/'+id, {
-              method: "DELETE",
-              headers: {
-                  "Accept": "application/json",
-                  "Content-Type": "application/json",
-                  Authorization: 'Bearer '+this.props.token
-              }
+        fetch('https://apis.edgiav.com/gallery/'+id, {
+            method: "DELETE",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                Authorization: 'Bearer '+this.props.token
+            }
           })
         .then(response => {
           this.setState({

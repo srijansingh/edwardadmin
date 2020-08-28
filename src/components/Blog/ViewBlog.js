@@ -45,7 +45,7 @@ class ViewBlog extends Component {
             isLoading:true
         });
 
-        fetch('https://api.edgiav.com/api/blog', {
+        fetch('https://apis.edgiav.com/api/blog', {
             method: "GET",
             headers: {
                 "Accept": "application/json",
@@ -73,7 +73,7 @@ class ViewBlog extends Component {
     }
 
     handleDelete = (id) => {
-      fetch('https://api.edgiav.com/api/blog/'+id, {
+      fetch('https://apis.edgiav.com/api/blog/'+id, {
             method: "DELETE",
             headers: {
                 "Accept": "application/json",
@@ -86,6 +86,7 @@ class ViewBlog extends Component {
           blogpost:false
         })
         alert("Post Deleted Successfully")
+        window.location.reload(false);
       })
       .catch(err => {
        

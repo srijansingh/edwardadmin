@@ -32,25 +32,25 @@ class  Dashboard extends Component {
     componentDidMount(){
         
 
-        fetch('https://server.mysastaprice.com/api/countactive', {
-            method: "GET",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json",
-                Authorization: 'Bearer '+this.props.token
-            }
-        })
-        .then(res => {
-            if(res.status !==200){
-                throw new Error('Failed to fetch the product')
-            }
-            return res.json()
-        }).then(response => {
-                console.log(response.count)
-                this.setState({
+        // fetch('https://server.mysastaprice.com/api/countactive', {
+        //     method: "GET",
+        //     headers: {
+        //         "Accept": "application/json",
+        //         "Content-Type": "application/json",
+        //         Authorization: 'Bearer '+this.props.token
+        //     }
+        // })
+        // .then(res => {
+        //     if(res.status !==200){
+        //         throw new Error('Failed to fetch the product')
+        //     }
+        //     return res.json()
+        // }).then(response => {
+        //         console.log(response.count)
+        //         this.setState({
                     
-                }) 
-            })
+        //         }) 
+        //     })
                 
     }
     

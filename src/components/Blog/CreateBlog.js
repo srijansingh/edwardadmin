@@ -36,7 +36,7 @@ class CreateBlog extends Component {
 
     handleContent =() =>{
         this.setState({isLoading : true})
-        fetch('https://api.edgiav.com/api/blog', {
+        fetch('https://apis.edgiav.com/api/blog', {
                 method: "POST",
                 headers: {
                     "Accept": "application/json",
